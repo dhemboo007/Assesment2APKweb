@@ -1,52 +1,34 @@
 # 🚗 Sistem Manajemen Kendaraan di Parkiran
 
-Aplikasi web untuk mengelola data kendaraan yang berada di area parkir menggunakan **PHP Native, HTML, CSS, dan Object-Oriented Programming (OOP)**.
+Aplikasi web untuk mengelola data kendaraan yang berada di area parkir menggunakan PHP Native, HTML, CSS, JavaScript, dan Object-Oriented Programming (OOP).
 
-Project ini merupakan pengembangan dari Final Project Assessment I mata kuliah **Aplikasi Web (ISWD201)** dengan penambahan fitur Session, Cookie, dan Upload File/Gambar.
+Project ini merupakan pengembangan Final Project Assessment I mata kuliah Aplikasi Web (ISWD201), dengan penambahan fitur Session, Cookie, dan Upload File/Gambar.
 
 ## 📌 Fitur Utama
 
-### 1. Manajemen Kendaraan
-- Menambahkan data kendaraan mobil dan motor.
-- Menampilkan informasi kendaraan.
-- Menghitung biaya parkir berdasarkan durasi.
-- Menghitung biaya tambahan khusus mobil.
-- Memberikan diskon parkir motor lebih dari 5 jam.
-- Menghapus data kendaraan.
+- **Manajemen Kendaraan:** Menambahkan, menampilkan, dan menghapus data mobil dan motor.
+- **Perhitungan Parkir:** Menghitung biaya parkir berdasarkan durasi, biaya tambahan mobil, dan diskon motor.
+- **Session:** Menyimpan data kendaraan sementara.
+- **Cookie:** Mengingat nama petugas parkir selama 7 hari.
+- **Upload Gambar:** Mengunggah foto kendaraan ke folder `images`.
+- **Upload Dokumen:** Mengunggah dokumen PDF, DOC, dan DOCX ke folder `files`.
+- **Validasi Upload:** Memeriksa MIME Type dan membatasi ukuran file.
 
-### 2. Session & Cookie
-- Menggunakan PHP Session untuk menyimpan data kendaraan sementara.
-- Menggunakan Cookie untuk mengingat nama petugas parkir.
-- Session dapat dihapus melalui fitur Logout.
-- Cookie nama petugas memiliki masa berlaku 7 hari.
+## 🛠️ Teknologi
 
-### 3. Upload File & Gambar
-- Upload foto kendaraan.
-- Upload dokumen kendaraan dalam format PDF, DOC, dan DOCX.
-- Menyimpan gambar ke folder `images`.
-- Menyimpan dokumen ke folder `files`.
-- Validasi tipe file menggunakan MIME Type.
-- Membatasi ukuran gambar maksimal 2 MB.
-- Membatasi ukuran dokumen maksimal 5 MB.
-- Menggunakan nama file acak untuk menghindari konflik nama.
-
-## 🛠️ Teknologi yang Digunakan
-
-| Teknologi | Kegunaan |
-|---|---|
-| HTML5 | Struktur halaman web |
-| CSS3 | Desain dan tampilan |
-| JavaScript | Interaksi form |
-| PHP Native | Backend aplikasi |
-| PHP OOP | Pengelolaan objek kendaraan |
-| Session & Cookie | Penyimpanan data sementara |
-| Apache | Web server |
-| Laragon | Local development environment |
+- HTML5
+- CSS3
+- JavaScript
+- PHP Native
+- PHP Object-Oriented Programming (OOP)
+- Session & Cookie
+- Apache
+- Laragon
 
 ## 📂 Struktur Folder
 
 ```text
-Assessment1/
+parkiran/
 │
 ├── index.php
 ├── Kendaraan.php
@@ -64,105 +46,67 @@ Assessment1/
     └── .htaccess
 ```
 
-## 🚀 Cara Instalasi dan Menjalankan
+## 🚀 Instalasi
 
-### 1. Persiapan
-Pastikan perangkat sudah memiliki:
-- Laragon
-- PHP
-- Apache
-- Visual Studio Code (opsional)
-
-### 2. Clone Repository
-
-Buka terminal dan jalankan:
+### 1. Clone Repository
 
 ```bash
-git clone https://github.com/USERNAME/Assessment1.git
+git clone https://github.com/dhemboo007/parkiran.git
 ```
 
-Ganti `USERNAME` dengan username GitHub kamu.
+### 2. Masukkan ke Folder Laragon
 
-### 3. Pindahkan Project
-
-Simpan folder project ke:
+Simpan folder `parkiran` di:
 
 ```text
-C:\laragon\www\Assessment1
+C:\laragon\www\parkiran
 ```
 
-### 4. Jalankan Laragon
+### 3. Jalankan Laragon
 
-1. Buka aplikasi Laragon.
-2. Klik **Start All**.
-3. Pastikan Apache berjalan.
-4. Aktifkan ekstensi PHP `fileinfo`.
+- Buka Laragon.
+- Klik Start All.
+- Pastikan Apache aktif.
+- Pastikan ekstensi PHP `fileinfo` aktif.
 
-### 5. Buka Website
+### 4. Jalankan Website
 
-Akses melalui browser:
+Buka browser dan akses:
 
 ```text
-http://localhost/Assessment1/
+http://localhost/parkiran/
 ```
 
-## 💻 Konsep OOP yang Diterapkan
+## 💡 Konsep OOP
 
-Project ini menerapkan beberapa konsep Object-Oriented Programming:
+**Encapsulation:** Menggunakan access modifier `private` dan `protected`.
 
-**1. Encapsulation**
+**Inheritance:** Class `Mobil` dan `Motor` mewarisi class `Kendaraan`.
 
-Menggunakan access modifier `private` dan `protected` untuk melindungi atribut class.
+**Polymorphism:** Melakukan override method `displayInfo()` dan `hitungBiayaParkir()`.
 
-**2. Inheritance**
+**Constructor:** Menginisialisasi atribut objek kendaraan.
 
-Class `Mobil` dan `Motor` mewarisi class induk `Kendaraan`.
+## 🔐 Keamanan
 
-**3. Polymorphism**
-
-Melakukan override method `displayInfo()` dan `hitungBiayaParkir()` sesuai karakteristik masing-masing kendaraan.
-
-**4. Constructor**
-
-Menginisialisasi atribut objek kendaraan saat objek dibuat.
-
-## 🔐 Keamanan Aplikasi
-
-Beberapa mekanisme keamanan yang diterapkan:
-
-- Validasi tipe file berdasarkan MIME Type.
-- Pembatasan ukuran file upload.
-- Penggunaan nama file acak.
-- Perlindungan folder upload menggunakan `.htaccess`.
-- Penggunaan `htmlspecialchars()` untuk mencegah output HTML yang tidak aman.
-
-## 📚 Informasi Project
-
-| Keterangan | Detail |
-|---|---|
-| Nama Project | Sistem Manajemen Kendaraan di Parkiran |
-| Mata Kuliah | Aplikasi Web |
-| Kode Mata Kuliah | ISWD201 |
-| Bahasa Pemrograman | PHP |
-| Framework | PHP Native |
-| Development Tool | Laragon & VS Code |
-| Penyimpanan | PHP Session (sementara) |
+- Validasi MIME Type file.
+- Pembatasan ukuran upload.
+- Nama file acak.
+- Proteksi folder upload menggunakan `.htaccess`.
+- Penggunaan `htmlspecialchars()` untuk keamanan output HTML.
 
 ## ⚠️ Catatan
 
-Project ini menggunakan PHP Session untuk menyimpan data kendaraan sementara. Data tidak disimpan secara permanen ke database MySQL dan dapat hilang ketika session berakhir.
-
-Project ini dikembangkan sebagai bagian dari pembelajaran dan implementasi konsep Web Development serta Object-Oriented Programming.
+Data kendaraan disimpan sementara menggunakan PHP Session, bukan database permanen. Data dapat hilang ketika session berakhir.
 
 ## 👨‍💻 Developer
 
 **Fatih El Rayyan**
 
 - GitHub: [@dhemboo007](https://github.com/dhemboo007)
-- LinkedIn: [Fatih El Rayyan](https://www.linkedin.com/)
 
 ---
 
-⭐ Jika project ini bermanfaat, jangan lupa berikan star pada repository ini!
+Developed as a Web Development Project using PHP Native & OOP.
 
-**Built with PHP & ❤️**
+⭐ Don't forget to star this repository!
